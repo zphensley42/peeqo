@@ -16,7 +16,7 @@ class SnipsIntentEngine extends IntentEngine {
     }
 
     interceptEvents() {
-        let self = this;+
+        let self = this;
         event.on('snips-onConnect', function() {
             event.emit('led-on', {anim: 'circle', color: 'aqua'});
             speak.speak('Snips MQTT connected!');
