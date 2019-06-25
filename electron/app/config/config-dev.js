@@ -25,5 +25,24 @@ module.exports = {
     },
     vlipsy:{
         key:"" // request for api key by emailing api@vlipsy.com
+    },
+    hue: {
+        bridgeUser: "", // 'user' of the bridge, output during setup of hue with peeqo (TODO: This needs to be smoother somehow)
+        bridgeIp: "",   // the ip of the Phillips Hue bridge
+        groups: [], // list of names of groups in the phillips hue setup
+        lights: []  // list of names of lights in the phillips hue setup
+    },
+    snips: {
+        mqtt: {
+            hostname: "mqtt://localhost"    // Where the mqtt server is running to talk with snips's audio server
+        }
+    },
+    github: {
+        accessToken: "",    // Access token from GH for auth
+        baseUrl: '',        // API url of the GH instance (can be set to an enterprise API url)
+        user: ''            // User to auth / make calls with
+    },
+    socket: {
+        host: ''            // socket.io server for web communication with peeqo
     }
-}
+};

@@ -12,6 +12,7 @@ const buttons = require('js/senses/buttons');
 const weather = require('js/skills/weather');
 const PeeqoListener = require('js/events/listeners');
 const { PeeqoActor, PeeqoAction } = require('js/actions/actions');
+const { PClient } = require('js/pclient/pclient');
 
 // Snip-dependencies (need to abstract out further, probably, into a configuration thing)
 const SnipsDetector = require('js/snips/detector');
@@ -22,9 +23,10 @@ const SnipsIntentsEngine = require('js/intent-engines/snips-intents');
 const peeqoListener = new PeeqoListener();
 var detector = null;
 const peeqoActor = new PeeqoActor();
+const intentEngine = new SnipsIntentsEngine(peeqoActor);
 
 // Start the intent engine
-peeqoListener.setIntentEngine(new SnipsIntentsEngine(peeqoActor), peeqoActor);
+peeqoListener.setIntentEngine(intentEngine, peeqoActor);
 
 // Only include the detector for environments it is supported on
 if(process.env.OS !== 'unsupported') {
@@ -160,3 +162,6 @@ else {
 
 	document.getElementById("debug_panel").style.display = "none"
 }
+
+// Server connection
+const pClient = new PClient(intentEngine);

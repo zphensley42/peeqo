@@ -13,11 +13,11 @@ var createWindow = () => {
 	// display index.html 
 	mainWindow.loadURL('file://'+__dirname+'/app/index.html')
 
-	if(os.arch() == 'arm'){
+	if(os.arch() === 'arm'){
 
 		// For Raspberry Pi
 
-		if(process.env.NODE_ENV == "debug"){
+		if(process.env.NODE_ENV === "debug"){
 			// open console only if NODE_ENV=debug is set
 			mainWindow.webContents.openDevTools();
 		}
