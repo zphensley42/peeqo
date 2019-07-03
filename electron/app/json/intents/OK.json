@@ -1,0 +1,13 @@
+{
+  "name": "OK",
+  "localFolder": "ok",
+  "queryTerms":["ok","okay","you got it"],
+  "servo": "look-up",
+  "led": {
+    "anim": "blink",
+    "color": "green"
+  },
+  "sound": null,
+  "volume": 0.5,
+  "type": "local"
+}

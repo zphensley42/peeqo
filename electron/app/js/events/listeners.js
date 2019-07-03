@@ -1,30 +1,21 @@
 const event = require('js/events/events');
-const { PeeqoActor, PeeqoAction } = require('js/actions/actions');
 const common = require('js/helpers/common');
 const power = require('js/power/power');
 const speak = require('js/senses/speak');
 const mic = require('js/senses/mic');
 
 // TODO: Add debug buttons to display for the top 4 buttons on peeqo
-// TODO: Setup utility for handling button triggers and how to pass to "actions" or so on
 
 class PeeqoListener {
 	constructor() {
 	}
 
-	setIntentEngine(intentEngine, actor) {
+	setIntentEngine(intentEngine) {
         this.intentEngine = intentEngine;
-        this.actor = actor;
         this.setup();
 	}
 
 	setup() {
-	    let actor = this.actor;
-
-        // Explicit for now, others are through the engine
-        let wakewordFunc = actor.wakeword.bind(actor);
-        event.on('wakeword', wakewordFunc);
-
         this.intentEngine.interceptEvents();
 
         event.on('no-command', () => {

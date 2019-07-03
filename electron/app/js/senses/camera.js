@@ -54,4 +54,4 @@ class Camera{
 	}
 }
 
-module.exports = Camera
+module.exports = Camera;

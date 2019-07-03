@@ -1,0 +1,13 @@
+{
+  "name": "Cat",
+  "localFolder": "null",
+  "queryTerms": ["Table flip"],
+  "servo": "tableflip",
+  "led": {
+    "anim": "blink",
+    "color": "red"
+  },
+  "sound": null,
+  "volume": 0.5,
+  "type": "remote"
+}

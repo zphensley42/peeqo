@@ -33,7 +33,6 @@ function showDiv(id) {
 async function setQuery(answer) {
 
 	// returns path to local file or remote query terms
-
 	if(answer.type === 'local'){
 		// search from local folder
 		let file = await pickFile(path.join(process.cwd(),'app','media','responses',answer.localFolder));

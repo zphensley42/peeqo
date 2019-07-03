@@ -1,0 +1,13 @@
+{
+  "name": "Alarm",
+  "localFolder": "alarm",
+  "queryTerms":["alarm","ringing","party"],
+  "servo": "jiggle",
+  "led": {
+    "anim": "blink",
+    "color": "yellow"
+  },
+  "sound":null,
+  "volume": 0.5,
+  "type": "local"
+}

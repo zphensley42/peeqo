@@ -1,0 +1,12 @@
+{
+  "name": "Wakeword",
+  "localFolder": null,
+  "queryTerms": null,
+  "servo": "alert",
+  "led": {
+    "anim":"circle",
+    "color": "aqua"
+  },
+  "sound": "alert.wav",
+  "volume": 0.1
+}

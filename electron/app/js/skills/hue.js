@@ -1,14 +1,15 @@
 const jsHue = require('js/lib/jshue');
 const config = require('config/config');
-const { PeeqoActor, PeeqoAction } = require('js/actions/actions');
 const speak = require('js/senses/speak');
+const { SnipsIntent, SnipsIntentWrapper } = require('js/intents/snips_intent');
 
 class PeeqoHue {
-    constructor(actor) {
+    constructor() {
         this.hue = jsHue();
         this.bridge = null;
         this.user = null;
-        this.actor = actor;
+        this.hueGroupIntent = new SnipsIntent("HueGroup", require('json/intents/HueGroup.json'));
+        this.hueLightIntent = new SnipsIntent("HueLight", require('json/intents/HueLight.json'));
 
         this.discoverNearbyBridges();
     }
@@ -79,15 +80,15 @@ class PeeqoHue {
                     })
                 }
 
-                self.actor.performAction(new PeeqoAction(
+                self.hueGroupIntent = self.hueGroupIntent.override(
                     {
-                        type:'remote',
                         queryTerms: [`lights ${state}`],
                         cbAfter: function() {
                             speak.speak('Turned ', groupName, ' lights ', state);
                         }
                     }
-                ));
+                );
+                let promise = self.hueGroupIntent.perform();
             })
         });
     }
@@ -117,15 +118,15 @@ class PeeqoHue {
                     })
                 }
 
-                self.actor.performAction(new PeeqoAction(
+                self.hueLightIntent = self.hueLightIntent.override(
                     {
-                        type:'remote',
                         queryTerms: [`lights ${state}`],
                         cbAfter: function() {
                             speak.speak('Turned ', lightName, ' ', state);
                         }
                     }
-                ));
+                );
+                let promise = self.hueLightIntent.perform();
             })
         });
     }

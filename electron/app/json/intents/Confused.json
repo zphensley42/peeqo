@@ -1,0 +1,14 @@
+{
+  "intentType": "snips",
+  "name": "Confused",
+  "localFolder": "confused",
+  "queryTerms": ["shrug", "confused", "dont know"],
+  "servo": null,
+  "led": {
+    "anim": "blink",
+    "color": "orange"
+  },
+  "sound": null,
+  "volume": 0.5,
+  "type": "local"
+}

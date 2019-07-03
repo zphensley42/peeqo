@@ -1,0 +1,13 @@
+{
+  "name": "Greeting",
+  "localFolder": "greeting",
+  "queryTerms": ["hello","hi","howdy","sup","whatsup"],
+  "servo": "look-up",
+  "led": {
+    "anim": "blink",
+    "color": "green"
+  },
+  "sound": null,
+  "volume": 0.5,
+  "type": "remote"
+}

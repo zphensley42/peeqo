@@ -1,0 +1,13 @@
+{
+  "name": "Bye",
+  "localFolder": "bye",
+  "queryTerms":["bye","see you","goodbye","ciao","so long"],
+  "servo": "look-up-slow",
+  "led": {
+    "anim": "blink",
+    "color": "blue"
+  },
+  "sound":null,
+  "volume": 0.5,
+  "type": "local"
+}
